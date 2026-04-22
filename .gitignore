@@ -1,0 +1,21 @@
+## macOS
+.DS_Store
+
+## Obsidian 本地 UI 状态 —— 每次打开就变化，不追
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/app.json.bak
+
+## 插件 data.json 可能含 token / 账号 / 同步状态
+.obsidian/plugins/*/data.json
+
+## 插件源代码（有些内置了第三方 OAuth 凭证触发 GitHub secret scanning）
+## 只留 manifest.json 做清单，用户在别的机器上拉仓库后在 Obsidian 里手动装即可
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/main.css
+.obsidian/plugins/*/*.js.map
+
+## 本机隐私 / 大文件（示例，需要时再加）
+# 私密/
+# *.mp4
