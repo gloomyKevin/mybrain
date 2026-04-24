@@ -16,6 +16,11 @@
 .obsidian/plugins/*/main.css
 .obsidian/plugins/*/*.js.map
 
+## 外部候选仓库暂存区（skill / agent / tool 原料）
+## 这些仓库各自有独立 .git 和版本源，不纳入本仓库版本化；
+## 资产索引登记它们的 URL 和路径，选中上架的会复制到 .claude/skills/ 一起 commit
+.claude/sources/
+
 ## 本机隐私 / 大文件（示例，需要时再加）
 # 私密/
 # *.mp4
