@@ -97,8 +97,8 @@ Kepano 的 Obsidian skills + 网页抓取。和内容创作无直接关系，但
 | 仓库 | URL | 类型 | 状态 | 上次拉取 |
 |---|---|---|---|---|
 | khazix-skills | https://github.com/KKKKhazix/khazix-skills | skill + prompt | ✅ 已调研 · 上架 2 skill + 1 prompt | 2026-04-24 |
+| baoyu-skills | https://github.com/JimLiu/baoyu-skills | 工程仓库（21 skill：图文生成 / 发布 / 工具） | 📋 已调研 · 按需激活（详见 [调研/宝玉-skill仓库.md](调研/宝玉-skill仓库.md)） | 2026-04-24 |
 | Viral_Writer_Skill | https://github.com/nashsu/Viral_Writer_Skill | 推测 skill | 排队 | - |
-| baoyu-skills | https://github.com/JimLiu/baoyu-skills | 推测 skill | 排队 | - |
 | erduo-skills | https://github.com/rookie-ricardo/erduo-skills | 混合（skill/tool） | 排队 | - |
 
 **调研流程**（每仓一个循环）：clone → 侦察 → 清单 → 挑选 → 上架挑中的。
