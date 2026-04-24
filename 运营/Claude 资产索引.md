@@ -1,20 +1,22 @@
 # Claude 资产索引
 
-> Claude 在本 vault 工作时可以调用或参考的**全部资产**的索引。不分"可见/不可见"（实现细节），按**功能 tier** 组织，对应我们的架构约定：Tier 0 永远生效 → Tier 1 情境触发 → Tier 2 按需加载 → Tier 3 内容资产。
+> Claude 在本 vault 工作时可以调用或参考的**全部资产**的索引。按**功能 tier** 组织：Tier 0 永远生效 → Tier 1 情境触发 → Tier 2 按需加载 → Tier 3 内容资产。
 >
-> **维护规则**：任何资产增删改，我必须同步更新本文件（memory `feedback_asset_index_sync`）。同时按照 `feedback_auto_git_sync` 的规则判断是否 commit + push。
+> Tier 2 内部按**业务目的**分层（选题 / 结构 / 文字 / 参考风格 / Prompt 备档 / 技术辅助），不按"可见性"或"触发机制"分——用户从业务视角查找。
+>
+> **维护规则**：任何资产增删改同步更新本文件（memory `feedback_asset_index_sync`），按 `feedback_auto_git_sync` 判断是否 commit + push。
 
 ---
 
 ## Tier 0 · 约束（永远生效）
 
-启动时已加载 / 硬引用，每次会话都在上下文里。
+启动时已加载，每次会话都在上下文里。
 
 | 资产 | 说明 | 位置 |
 |---|---|---|
-| CLAUDE.md | 员工手册、硬约束、命名规范、禁止项 | [CLAUDE.md](../CLAUDE.md) |
+| CLAUDE.md | 员工手册、硬约束、命名规范 | [CLAUDE.md](../CLAUDE.md) |
 | 自我.md | 自我画像（失败模式、动机、提示） | [自我.md](../自我.md) |
-| OPC 规划.md | 6 个月路径 + 硬约束（4/24 第一条小红书等） | [OPC 规划.md](../OPC%20规划.md) |
+| OPC 规划.md | 6 个月路径 + 硬约束 | [OPC 规划.md](../OPC%20规划.md) |
 | SOP.md | 操作流程手册（触发词 + 步骤） | [SOP.md](../SOP.md) |
 | memory: project_mybrain_lark_split | 项目定位、git 远端 | [md](file:///Users/admin/.claude/projects/-Users-admin-mybrain/memory/project_mybrain_lark_split.md) |
 
@@ -30,41 +32,76 @@
 | feedback_asset_index_sync | 改 skill/memory 同步更新本索引 | [md](file:///Users/admin/.claude/projects/-Users-admin-mybrain/memory/feedback_asset_index_sync.md) |
 | feedback_auto_git_sync | vault 改动自动 commit + push 到 origin/main | [md](file:///Users/admin/.claude/projects/-Users-admin-mybrain/memory/feedback_auto_git_sync.md) |
 
-## Tier 2 · 工具（按需加载）
+## Tier 2 · 工具与方法论（按需加载）
 
-### 2a · 内容运营 skills（已激活，Claude Code 自动触发）
+按**业务目的**分层。同层单一职责；跨层可串行组合（选题 → 结构 → 文字 → 参考风格校准）。
 
-按抽象层归类。同层职责不重叠，跨层串行组合（结构 → 文字 → 审查）。
+### 2a · 选题 / 研究（Content Discovery）
 
-| 层 | skill | 一句话 | 打开 |
+确定"写什么"之前的深度调研。
+
+| 资产 | 一句话 | 触发 | 位置 |
 |---|---|---|---|
-| 结构层 | lidan-writing-framework | 李诞七步框架，深度讲解型长文 / 知识普及 | [SKILL.md](../.claude/skills/lidan-writing-framework/SKILL.md) |
-| 文字层 | humanizer-zh | 去 AI 味、文本净化 | [SKILL.md](../.claude/skills/humanizer-zh/SKILL.md) |
-| 审查层 | _（空）_ | | |
-| 平台层 | _（空）_ | 比如未来"小红书短句口语化" | |
+| hv-analysis | 横纵分析深度研究 skill：联网信息收集 + 纵向时间线 + 横向竞品对比 → PDF 研究报告 | 自动 | [SKILL.md](../.claude/skills/hv-analysis/SKILL.md) |
 
-### 2b · 通用辅助 skills（已激活）
+> hv-analysis 依赖 Python + `weasyprint` + `markdown`，已装（`pip install --break-system-packages`）
 
-| skill | 一句话 | 打开 |
+### 2b · 内容结构（叙事骨架）
+
+"怎么组织"文章的结构方法论。
+
+| 资产 | 一句话 | 触发 | 位置 |
+|---|---|---|---|
+| lidan-writing-framework | 李诞七步框架：开场故事→矛盾→定义→历史→论证→应用→升华，深度讲解型长文叙事 | 自动 | [SKILL.md](../.claude/skills/lidan-writing-framework/SKILL.md) |
+
+### 2c · 文字表达（活人感 / 净化）
+
+写完后对文字层面的处理。
+
+| 资产 | 一句话 | 触发 | 位置 |
+|---|---|---|---|
+| humanizer-zh | 去 AI 味：修掉夸大象征 / 宣传语 / 破折号过度 / 三段式 / 否定排比等 AI 痕迹 | 自动 | [SKILL.md](../.claude/skills/humanizer-zh/SKILL.md) |
+
+### 2d · 参考风格（Reference Voices）
+
+带人设 / 完整写作工作流的 skill。**默认不触发**，用户显式说"按 X 风格写"才启用；未来累积多个时，我会在开写前问"这次用谁"。
+
+| 资产 | 人设 / 平台倾向 | 包含 | 位置 |
+|---|---|---|---|
+| khazix-writer | 卡兹克 / AI 博主 / 公众号长文 | HKR 选题质检 + 四层自检 + "讲人话"价值观 + AI 角色边界 | [SKILL.md](../.claude/skills/khazix-writer/SKILL.md) |
+
+### 2e · Prompt 备档（显式引用，非 skill）
+
+单次粘贴型 prompt，不进 Claude Code 自动触发系统，位置在 vault 内可直接搜索引用。需要时我主动读，或者你在对话里 @。
+
+| 资产 | 一句话 | 位置 |
 |---|---|---|
-| defuddle | 从网页抽干净 markdown，省 token，替代 WebFetch | [SKILL.md](../.claude/skills/defuddle/SKILL.md) |
-| obsidian-markdown | 处理 Obsidian 专有 markdown 语法（wikilink/callout/frontmatter） | [SKILL.md](../.claude/skills/obsidian-markdown/SKILL.md) |
+| 横纵分析法-卡兹克版.md | 轻量 Deep Research prompt，粘贴到任何 AI 对话 / Deep Research 里可用 | [md](prompt-备档/横纵分析法-卡兹克版.md) |
+
+### 2f · 技术辅助（开发环境）
+
+Kepano 的 Obsidian skills + 网页抓取。和内容创作无直接关系，但处理 vault 文件 / 网页素材时会用。
+
+| skill | 一句话 | 位置 |
+|---|---|---|
+| defuddle | 从网页抽干净 markdown，替代 WebFetch | [SKILL.md](../.claude/skills/defuddle/SKILL.md) |
+| obsidian-markdown | 处理 Obsidian 专有 markdown 语法 | [SKILL.md](../.claude/skills/obsidian-markdown/SKILL.md) |
 | obsidian-bases | 读写 `.base` 文件（Obsidian 数据视图） | [SKILL.md](../.claude/skills/obsidian-bases/SKILL.md) |
 | obsidian-cli | 用 CLI 操作 vault | [SKILL.md](../.claude/skills/obsidian-cli/SKILL.md) |
-| json-canvas | 读写 `.canvas` 文件（Obsidian 白板） | [SKILL.md](../.claude/skills/json-canvas/SKILL.md) |
+| json-canvas | 读写 `.canvas` 文件 | [SKILL.md](../.claude/skills/json-canvas/SKILL.md) |
 
-### 2c · 候选仓库（未激活，暂存在 `.claude/sources/`，主仓库 .gitignored）
+### 2g · 候选仓库（未完全消化，暂存 `.claude/sources/`，主仓库 .gitignored）
 
-这些仓库里可能混有 skill / agent / tool，需要逐个调研后决定上架哪些。
+原作者有独立版本源，不做二次版本化。选中上架的 skill 会**复制**到 `.claude/skills/` 一起 commit；sources 可整个删不影响已上架。
 
-| 仓库 | URL | 本地路径 | 类型 | 状态 | 上次拉取 |
-|---|---|---|---|---|---|
-| khazix-skills | https://github.com/KKKKhazix/khazix-skills | `.claude/sources/khazix-skills/` | 待确认 | 调研中 | 2026-04-24 |
-| Viral_Writer_Skill | https://github.com/nashsu/Viral_Writer_Skill | 未拉取 | 推测 skill | 排队 | - |
-| baoyu-skills | https://github.com/JimLiu/baoyu-skills | 未拉取 | 推测 skill | 排队 | - |
-| erduo-skills | https://github.com/rookie-ricardo/erduo-skills | 未拉取 | 混合（skill/tool） | 排队 | - |
+| 仓库 | URL | 类型 | 状态 | 上次拉取 |
+|---|---|---|---|---|
+| khazix-skills | https://github.com/KKKKhazix/khazix-skills | skill + prompt | ✅ 已调研 · 上架 2 skill + 1 prompt | 2026-04-24 |
+| Viral_Writer_Skill | https://github.com/nashsu/Viral_Writer_Skill | 推测 skill | 排队 | - |
+| baoyu-skills | https://github.com/JimLiu/baoyu-skills | 推测 skill | 排队 | - |
+| erduo-skills | https://github.com/rookie-ricardo/erduo-skills | 混合（skill/tool） | 排队 | - |
 
-**调研流程**（每仓一个循环）：clone → Agent 侦察 → 给清单 → 用户挑 → 上架挑中的（复制到 `.claude/skills/` 并 commit）。未选中的留在 sources，将来需要时再用。
+**调研流程**（每仓一个循环）：clone → 侦察 → 清单 → 挑选 → 上架挑中的。
 
 ## Tier 3 · 内容资产（vault 目录，Claude 可读写）
 
@@ -75,8 +112,9 @@
 | [草稿/](../草稿/) | 正在写的内容 |
 | [已发布/](../已发布/) | 发布存档 + 数据 |
 | [废案/](../废案/) | 历史留档（不主动回看） |
+| [运营/](.) | 人设档、SOP、配方、prompt 备档、本索引 |
 
-核心流水线：`收件箱 → 素材库 → 草稿 → 已发布`。详见 `CLAUDE.md`。
+核心流水线：`收件箱 → 素材库 → 草稿 → 已发布`（CLAUDE.md）。
 
 ---
 
@@ -94,9 +132,11 @@
 
 ---
 
-## 维护约定
+## 架构约定
 
 - **增删改任一 Tier 0/1/2 资产** → 本文件同步更新（feedback_asset_index_sync）
 - **本文件改动** → 触发 commit + push 规则（feedback_auto_git_sync）
-- **候选仓库调研**：一次一个，每个走"clone → 侦察 → 清单 → 挑选 → 上架"五步，不批量
-- **上架即复制**：选中的 skill 从 `.claude/sources/<repo>/xxx/` **复制**到 `.claude/skills/<xxx>/`；两份独立，sources 可以整个删除不影响已上架
+- **2d 参考风格 skill 默认不触发**：Claude Code 虽然会自动识别这些 skill 的触发词，但对写稿场景我会优先用 2b 结构 + 2c 文字处理，只有用户显式说"按 X 风格"才调用 2d
+- **多平台矩阵立场**：好东西的价值判断 ≠ 单平台适用性。skill 装进来是因为方法论本身有价值，下游到哪个平台分发是"用的时候剪裁"的问题
+- **上架即复制**：选中的 skill 从 `.claude/sources/<repo>/xxx/` **复制**到 `.claude/skills/<xxx>/`；两份独立
+- **候选仓库不进主仓库 git**：原作者有独立版本源，避免二次版本化和仓库膨胀
