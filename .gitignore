@@ -24,3 +24,6 @@
 ## 本机隐私 / 大文件（示例，需要时再加）
 # 私密/
 # *.mp4
+
+## Claudian 插件本地状态（settings + sessions/*.meta.json）
+.claudian/
