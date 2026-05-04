@@ -14,10 +14,10 @@
 
 | 资产 | 说明 | 位置 |
 |---|---|---|
-| CLAUDE.md | 员工手册、硬约束、命名规范 | [CLAUDE.md](../CLAUDE.md) |
-| 自我.md | 自我画像（失败模式、动机、提示） | [自我.md](../自我.md) |
-| OPC 规划.md | 6 个月路径 + 硬约束 | [OPC 规划.md](../OPC%20规划.md) |
-| SOP.md | 操作流程手册（触发词 + 步骤） | [SOP.md](../SOP.md) |
+| CLAUDE.md | 员工手册、硬约束、命名规范 | [CLAUDE.md](【需要更新，去掉硬约束】CLAUDE.md) |
+| 自我.md | 自我画像（失败模式、动机、提示） | [自我.md](【重要，需要更新】自我.md) |
+| OPC 规划.md | 6 个月路径 + 硬约束 | [OPC 规划.md](【旧，但有价值】OPC%20规划.md) |
+| SOP.md | 操作流程手册（触发词 + 步骤） | [SOP.md](【旧，ai早期写的】SOP.md) |
 | memory: project_mybrain_lark_split | 项目定位、git 远端 | [md](file:///Users/admin/.claude/projects/-Users-admin-mybrain/memory/project_mybrain_lark_split.md) |
 
 ## Tier 1 · 行为偏好（情境触发）
@@ -109,7 +109,7 @@ Kepano 的 Obsidian skills + 网页抓取。和内容创作无直接关系，但
 
 | 目录 | 角色 |
 |---|---|
-| [收件箱.md](../收件箱.md) | 唯一捕获入口 |
+| [收件箱.md](【旧，考虑废弃】收件箱.md) | 唯一捕获入口 |
 | [素材库/](../素材库/) | 经历 / 金句 / 外部参考（**原料**，未加工事实清单） |
 | [选题库/](../选题库/) | 从素材提炼的创意 + 骨架 + 钩子（**半成品**，不抄素材细节，只指针引用） |
 | [草稿/](../草稿/) | 正在写的具体内容 |
