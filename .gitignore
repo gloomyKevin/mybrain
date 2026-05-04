@@ -9,6 +9,12 @@
 ## 插件 data.json 可能含 token / 账号 / 同步状态
 .obsidian/plugins/*/data.json
 
+## 插件本地环境变量（可能含 API key / token）
+.obsidian/plugins/*/.env.local
+.obsidian/plugins/*/.env
+.env.local
+.env
+
 ## 插件源代码（有些内置了第三方 OAuth 凭证触发 GitHub secret scanning）
 ## 只留 manifest.json 做清单，用户在别的机器上拉仓库后在 Obsidian 里手动装即可
 .obsidian/plugins/*/main.js
