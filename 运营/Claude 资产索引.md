@@ -90,6 +90,32 @@ Kepano 的 Obsidian skills + 网页抓取。和内容创作无直接关系，但
 | obsidian-cli | 用 CLI 操作 vault | [SKILL.md](../.claude/skills/obsidian-cli/SKILL.md) |
 | json-canvas | 读写 `.canvas` 文件 | [SKILL.md](../.claude/skills/json-canvas/SKILL.md) |
 
+### 2h · 视频/动效制作（跨项目工具，全局安装）
+
+非内容创作类业务工具：跨项目可用，装在 `~/.agents/skills/`（symlink → `~/.claude/skills/`）。
+
+| 资产 | 一句话 | 触发 |
+|---|---|---|
+| hyperframes | 写 composition / 字幕 / 转场 / 音频反应动画的主笔 | 自动 |
+| hyperframes-cli | dev loop：init / lint / preview / render / doctor | 自动 |
+| hyperframes-media | TTS（Kokoro）/ 转录（Whisper）/ 背景去除（u2net） | 自动 |
+| hyperframes-registry | 装第三方 block / 组件模板 | 自动 |
+| gsap | GSAP 时间轴动画核心 | 自动 |
+| lottie | Lottie / dotLottie 嵌入 | 自动 |
+| three | Three.js / WebGL 三维场景 | 自动 |
+| animejs | Anime.js 时间轴 | 自动 |
+| css-animations | CSS keyframes 动画 | 自动 |
+| waapi | Web Animations API | 自动 |
+| tailwind | Tailwind v4 浏览器运行时 | 自动 |
+| website-to-hyperframes | 网站抓取 → 视频管线 | 自动 |
+| remotion-to-hyperframes | Remotion 项目迁移到 hyperframes | 自动 |
+
+> 仓库源码备查：`~/research/hyperframes/`
+> 能力卡：[[hyperframes 能力卡]]
+> 安装：`npx skills add heygen-com/hyperframes -y -g`
+> 卸载：删除 `~/.agents/skills/<skill-name>/`
+> 第一个 demo：`~/research/hyperframes-demos/01-what-is-skill/`
+
 ### 2g · 候选仓库（未完全消化，暂存 `.claude/sources/`，主仓库 .gitignored）
 
 原作者有独立版本源，不做二次版本化。选中上架的 skill 会**复制**到 `.claude/skills/` 一起 commit；sources 可整个删不影响已上架。
