@@ -20,7 +20,7 @@
 | 资产 | 说明 | 位置 |
 |---|---|---|
 | CLAUDE.md | 员工手册、硬约束、命名规范 | [CLAUDE.md](【需要更新，去掉硬约束】CLAUDE.md) |
-| 自我.md | 自我画像（失败模式、动机、提示） | [自我.md](【重要，需要更新】自我.md) |
+| 自我.md | 自我画像（失败模式、动机、提示） | [自我.md](【一般，claude%20旧版】自我.md) |
 | OPC 规划.md | 6 个月路径 + 硬约束 | [OPC 规划.md](【旧，但有价值】OPC%20规划.md) |
 | SOP.md | 操作流程手册（触发词 + 步骤） | [SOP.md](【旧，ai早期写的】SOP.md) |
 | memory: project_mybrain_lark_split | 项目定位、git 远端 | [md](file:///Users/admin/.claude/projects/-Users-admin-mybrain/memory/project_mybrain_lark_split.md) |
