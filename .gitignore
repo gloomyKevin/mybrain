@@ -33,3 +33,11 @@
 
 ## Claudian 插件本地状态（settings + sessions/*.meta.json）
 .claudian/
+
+## 本机录音 / 派生转写 / 媒体处理临时区 —— 本地原料和派生产物，不入库
+录音/
+transcripts/
+ops/
+
+## Obsidian 临时空文件
+未命名.md

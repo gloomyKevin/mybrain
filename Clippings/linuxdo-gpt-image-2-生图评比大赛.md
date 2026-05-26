@@ -2610,7 +2610,7 @@ jiangxi1024×1536 678 KB](https://cdn3.ldstatic.com/original/4X/1/4/d/14d17e742a
 image1055×1491 274 KB](https://cdn3.ldstatic.com/original/4X/9/f/e/9fe817c24175816503245a3326e756d8e13acad1.jpeg "image")
 
   
-[[1]](#footnote-17109338-1)  
+[[灵感精选/1]](#footnote-17109338-1)  
 
 [![image](https://cdn3.ldstatic.com/optimized/4X/0/e/7/0e7ea57b053d5ef419141fb132ab855d8fa9a740_2_357x500.jpeg)
 
@@ -2705,7 +2705,7 @@ image796×678 144 KB](https://cdn3.ldstatic.com/original/4X/9/2/e/92efd9e91c1409
 
 image1086×1448 246 KB](https://cdn3.ldstatic.com/original/4X/6/c/2/6c278a0ea95661d415d4d9da8f7d938c0e300adc.jpeg "image")
 
-还是英文的好些[[1]](#footnote-17110004-1)
+还是英文的好些[[灵感精选/1]](#footnote-17110004-1)
 
 [![image](https://cdn3.ldstatic.com/optimized/4X/e/c/7/ec724d632b20af9e68febc5c50658522d836bc96_2_333x500.jpeg)
 
